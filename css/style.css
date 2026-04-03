@@ -3,9 +3,13 @@
 html { font-size: 10px; scroll-behavior: smooth; }
 
 body { 
-    background-color: #d1d1d1; 
-    background-image: radial-gradient(#bcbcbc 1.5px, transparent 1.5px);
-    background-size: 30px 30px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/static-screen.gif');
+
+    background-size: cover; /* Cubre toda la pantalla */
+    background-position: center; /* Centra el fondo */
+    background-attachment: fixed; /* El fondo no se mueve al hacer scroll */
+    background-repeat: no-repeat;
+    
     font-family: "Tahoma", "Geneva", sans-serif;
     color: #333;
     line-height: 1.5;
@@ -37,9 +41,15 @@ nav a {
     margin-left: 2.5rem; 
     text-decoration: none;
     font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 3px;
+    transition: background 0.3s;
 }
 
-nav a:hover { color: #a2ffc6; } /* Efecto al pasar el mouse */
+nav a:hover {
+    background: rgba(162, 255, 198, 0.2); 
+    color: #a2ffc6;
+}
 
 /* CONTENEDOR COMPACTO */
 .container { 
@@ -63,6 +73,11 @@ nav a:hover { color: #a2ffc6; } /* Efecto al pasar el mouse */
     border: 2px solid #5d737e;
     height: fit-content;
     box-shadow: 6px 6px 0px rgba(0,0,0,0.1);
+}
+
+.content-area, .sidebar { 
+    background: rgba(242, 239, 228, 0.95); 
+    backdrop-filter: blur(2px); /* Difumina un poco el glitch detrás de la ventana */
 }
 
 .win-title {
@@ -101,6 +116,18 @@ nav a:hover { color: #a2ffc6; } /* Efecto al pasar el mouse */
     font-size: 1.3rem;
     font-weight: bold;
     border-bottom: 1px solid #c0c0c0;
+}
+
+.card p {
+    font-size: 1.4rem;      
+    font-weight: bold; /* Texto en negrita */
+    color: #1a1a1a;       
+    padding: 1.5rem; /* Más espacio interno para que no toque los bordes */
+    line-height: 1.4; /* Mejora el espacio entre líneas */
+    min-height: 7.5rem; /* Altura mínima para que todas las cards midan lo mismo */
+    display: flex;         
+    align-items: center;    
+    text-align: left;       
 }
 
 /* BLOG*/
@@ -149,17 +176,16 @@ footer { margin-top: 5rem; }
 .mini-item {
     display: flex;
     align-items: center;
-    gap: 1.2rem; /* Espacio entre imagen y texto */
+    gap: 1rem; /* Espacio entre imagen y texto */
     padding: 1rem;
-    border-bottom: 1px solid #dcd7c9; /* Línea divisoria */
+    min-height: 8rem; /* Para que todos los bloques midan lo mismo */
 }
 
 .mini-item img {
-    width: 15rem; /* Tamaño más pequeño */
-    height: 13rem;     
-    object-fit: cover; 
-    border: 1px solid #5d737e; 
-    border-radius: 2px;
+    width: 10rem; 
+    height: 10rem;
+    object-fit: cover; /* Esto es CLAVE para que no se estiren */
+    border: 1px solid #5d737e;
 }
 
 .mini-item span {
