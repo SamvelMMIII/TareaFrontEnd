@@ -143,3 +143,28 @@ footer { margin-top: 5rem; }
     padding: 1.5rem;
     font-size: 1.4rem;
 }
+
+/* --- AJUSTES PARA MÚSICA EN COLA --- */
+
+.mini-item {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem; /* Espacio entre imagen y texto */
+    padding: 1rem;
+    border-bottom: 1px solid #dcd7c9; /* Línea divisoria */
+}
+
+.mini-item img {
+    width: 15rem; /* Tamaño más pequeño */
+    height: 13rem;     
+    object-fit: cover; 
+    border: 1px solid #5d737e; 
+    border-radius: 2px;
+}
+
+.mini-item span {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #333;
+    line-height: 1.2;
+}
